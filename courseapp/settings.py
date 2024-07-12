@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'courses' #her yeni uygulamayı buraya gelip tanıtmak gerekir
+    'courses',
+
+
 ]
 
 MIDDLEWARE = [

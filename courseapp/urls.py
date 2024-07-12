@@ -13,24 +13,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+""" http://127.0.0.1:8000/     = kullanıcı browser'a böyle yazarsa anasayfa çıksın diyip view içinde tanımlayabilirim
+    http://127.0.0.1:8000/home = kullanıcı browser'a böyle yazarsa anasayfa çıksın diyip view içinde tanımlayabilirim
+    http://127.0.0.1:8000/courses = kullanıcı browser'a böyle yazarsa kurs listesi çıksın diyip view içinde tanımlayabilirim.
+"""
+
 from django.contrib import admin
-from django.http import HttpResponse #HttpResponse kütüphanesi django.http'den bu projeye import edildi
 from django.urls import path, include
 
+urlpatterns = [
+    path('', include('courses.urls')),  # courses`uygulamasının urls.py dosyasını dahil edin
+    path('admin/', admin.site.urls),
+]
 
+"""kodun açıklaması : urlpatterns içine path eklenir path('',home), gibi ve bunun anlamı  http://127.0.0.1:8000/ şeklinde boş parametresiz gelirse home view olarak tanımlanmış methoda git ve
+def home(request):
+    return HttpResponse('anasayfa') httpResponse ile aasayfa yazısını ekrana return et.
+"""
 
-
-#route = http://127.0.0.1:8000/ bu url temsil eder
+#route = http://127.0.0.1:8000/ bu url temsil eder bu url sonuna eklenen parametreleri bağlamak istediğimiz sayfaya yönlendircez bu yönlendirme işlmeini ise view dosyası içinde metodlsr tanımlayıp url dosyasında çağırırız
 #view= pythonda kullandığımız method veya diğer adıyla iş yapan fonkisyonlar
 
 
-
-#urlpatterns bir url şemasıdır ve metod ile burada url bağlanır
-urlpatterns=[
-
-    path('/',include('courses.urls')), #courses uygulamaısndaki urls.py içindeki urlspattern içini çağırıyor.include methodunu yukarıda import ettikten sonra burada kullanırız bu metod bize farlklı uygulama içinde tanımlanmış bilgileri farklı bir app içinde çağırabiliyorsun.
-    path('admin/', admin.site.urls),
-]
 """
 Aslında burada yukarıda yaptığımız urlpatterns (url şeması)'nı ait olduğu uygulama içinden buraya yani ana uygulamaya çağırmalıyız burada tanımlamamalıyız 
 mesela admin uygulaması başka bir yerde ve biz admin url ile request eşleştirmesini burada farklı bir yolla yapmalıyız.

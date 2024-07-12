@@ -1,0 +1,8 @@
+
+django-projects= projenin en dıştaki klasörüdür
+
+courseapp = projenin tüüüm kodlarının içinde tutuulduğu ana klasördür tüm proje uygulammaları bu klasör altına eklenir
+
+ikinci courseapp isimli dosya courseapp klasörü altındaki  ise = tüm projenin ayarlarınınn yapıldığı ve diğer uygulamaların çağrıldığı main dosyası gibi düşünebilirsin tüm uygulamalar burada çağrılıp çalıtırılıyor
+
+courses klasörü ise = proje için bir işi halleden görevli app bu appler aslında package ile aynı mantık en sonda bu packageler ana manin olan courseapp içnde çağırılıyor

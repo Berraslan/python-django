@@ -1,0 +1,5 @@
+
+django-admin = tüm komultarı listeler
+startproject = yeni bir proje oluşturur
+python manage.py startapp uygulamaİsmi = yeni bir uygulama dosyasını eklemek için
+manage.py runserver = uygulamayı çalıştırma
