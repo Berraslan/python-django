@@ -3,9 +3,8 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.home),  # parametresiz iken de home view return edilir
-    path('iletisim/', views.iletisim),
-    path('hakkimizda/', views.hakkimizda),
-    path('anasayfa/', views.home),
-    path('home/', views.home),
+    path('', views.index),  #views dosyası altında index view'ı çağrılır
+    path('contact/', views.contact),
+    path('about/', views.about),
+    path('index/', views.index),
 ]

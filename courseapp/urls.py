@@ -4,13 +4,17 @@
     http://127.0.0.1:8000/home = kullanıcı browser'a böyle yazarsa anasayfa çıksın diyip view içinde tanımlayabilirim
     http://127.0.0.1:8000/courses = kullanıcı browser'a böyle yazarsa kurs listesi çıksın diyip view içinde tanımlayabilirim.
 """
+#request - uygulamaya gelen talepler
+#response - uygulamadan talebe karşılık dönem cevaplar
+#urls.py uygulmaya gelen taleplerin karşılandığı gerekli yerlere ve sayfalara yönlendirmeler yapıldığı yerdir
+
 
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
     path('', include('pages.urls')),  # boş parametresiz geldiğinde pages sayfasındaki urls'lere erişiebilir şekilde yönlendir.
-    path('kurs/', include('courses.urls')), #http://127.0.0.1:8000/kurs altındaki urllere gitsin demek
+    path('kurslar/', include('courses.urls')), #http://127.0.0.1:8000 courses uygulaması altında tanımlı olan urls.py dosyası içindeki  url'lere gitsin demek yani talebi yönlendiriryoruz
     path('admin/', admin.site.urls),#admin ön eki gelmişse admin'e gider
 ]
 
