@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-   <center>Bu bir iletişim sayfasıdır</center>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block css_files %}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.cs"/>
+{% endblock %}
+
+{% block page_title%}
+     iletişim
+{% endblock %}
+
+{% block content %}
+<div class ="container mt-3">
+    <div class="row">
+
+        <div class="col-12 ">
+            <h1>iletişim</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!--yukarıdaki 3 satır en dıştaki tüm proje için hazır olarak hazırlanan layout.html sayfasını extend edip burada sadece onun içindeki block end blok olan kısımı değiştirmek için ayırlmış alana bu sayfa içindekini yaz ve sadece bu sayfada kullanılır olsun-->

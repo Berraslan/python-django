@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-       <h1>
-           ANASAYFA
-       </h1>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block page_title %}
+    anasayfa
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+   <div class="row">
+      <div class="col-3">
+         <!--menu-->
+         {% include 'courses/partials/_categories.html' %}
+      </div>
+      <div class="col-9">
+         <h1>anasayfa</h1>
+         <!--block/endblock değiştirilebilir içerik tanımlar -->
+      </div>
+   </div>
+</div>
+{% endblock %}
